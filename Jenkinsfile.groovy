@@ -3,7 +3,9 @@ pipeline{
     
     stages{
         stage('Build Hibernate'){
-            sh "./gradlew --no-daemon --system-prop 'org.gradle.jvmargs=-Xmx${env.XMX} -XX:MaxMetaspaceSize=512m' clean build"
+            steps {
+                sh "./gradlew --no-daemon --system-prop 'org.gradle.jvmargs=-Xmx${env.XMX} -XX:MaxMetaspaceSize=512m' clean build"
+            }
         }
     }
 }

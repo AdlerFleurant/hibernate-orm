@@ -81,6 +81,10 @@ featurepack {
 	autoAddRepositories = false
 }
 
+tasks.withType(Test) {
+	maxParallelForks = 1
+}
+
 task createCoreFeaturePackZip( type: Zip, dependsOn: [featurepack] ) {
 	baseName 'hibernate-orm-jbossmodules'
 	from project.fpackStagingDir

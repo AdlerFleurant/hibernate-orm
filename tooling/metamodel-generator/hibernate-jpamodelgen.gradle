@@ -43,6 +43,9 @@ compileTestJava {
     ]
 }
 
+tasks.withType(Test) {
+    maxParallelForks = 1
+}
 
 task jaxb {
     // configure Gradle up-to-date checking

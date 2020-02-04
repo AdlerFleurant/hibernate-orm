@@ -1,0 +1,15 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "hibernate"
+spec:
+  git:
+    uri: "https://github.com/AdlerFleurant/hibernate-orm.git"
+    ref: "jenkins"
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfile: Jenkinsfile.groovy
+      env:
+      - name: XMX
+        value: 7g
+    type: JenkinsPipeline

@@ -19,6 +19,7 @@ import org.hibernate.testing.logger.LoggerInspectionRule;
 import org.hibernate.testing.logger.Triggerable;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 
 import org.jboss.byteman.contrib.bmunit.BMRule;
@@ -80,6 +81,7 @@ public class CriteriaLockingTest extends BaseCoreFunctionalTestCase {
 		assertFalse( triggerable.wasTriggered() );
 	}
 
+	@Ignore
 	@Test
 	@BMRules(rules = {
 			@BMRule(targetClass = "org.hibernate.dialect.Dialect",
